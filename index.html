@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=5">
+</head>
+<body>
+    <h1>Student Attendance Management</h1>
+
+    <div class="button-container">
+        <a href="{{ url_for('add_student') }}" class="btn">Update List</a>
+        <a href="{{ url_for('mark_attendance') }}" class="btn">Mark Attendance</a>
+        <a href="{{ url_for('view_attendance') }}" class="btn">View Attendance Records</a>
+    </div>
+
+    <h2>Student List</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Roll Number</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

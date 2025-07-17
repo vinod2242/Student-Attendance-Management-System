@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=6">
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form method="post">
+        <input type="text" name="name" placeholder="Student Name" required>
+        <input type="text" name="roll_number" placeholder="Roll Number" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <h2>Remove Student</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Roll Number</th>
+            <th>Action</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>
+                <form action="{{ url_for('remove_student', student_id=student[0]) }}" method="post" style="display:inline;">
+                    <button type="submit">Remove</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="button-container">
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>

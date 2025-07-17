@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Attendance Records</h1>
+
+    <div class="button-container">
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    </div>
+
+    {% if records %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            {% for record in records %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p style="margin-top: 20px; font-size: 18px; color: #e74c3c;">
+            No attendance records available.
+        </p>
+    {% endif %}
+</body>
+</html>
