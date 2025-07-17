@@ -1,1 +1,2 @@
 # Student-Attendance-Management-System
+Developed a web-based Student Attendance Management System using Flask, SQLite, HTML, CSS, and Python to efficiently manage student records and attendance tracking. Built and implemented complete CRUD functionality to add, view, mark, and delete student attendance with clear visual feedback and smooth navigation. Created dynamic tables with conditional messages for empty data to improve usability. Designed a clean and responsive user interface using CSS gradients and consistent button styles for an intuitive user experience.
