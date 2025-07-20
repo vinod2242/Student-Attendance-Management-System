@@ -38,10 +38,6 @@ Features **clear visual feedback, smooth navigation, and dynamic tables** with c
 
 pip install flask
 
-markdown
-Copy
-Edit
-
 2️⃣ **Run the Flask app**:
 
 python app.py
